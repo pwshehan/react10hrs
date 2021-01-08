@@ -3,12 +3,14 @@ import ReactDom from "react-dom";
 
 //CSS
 import "./index.css";
+//Setup vars
+const author = "Amelia Hepworth";
+const title = "I Love You to the Moon and Back";
+const img =
+  "https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg";
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
       <Book />
     </section>
   );
@@ -17,23 +19,11 @@ function BookList() {
 const Book = () => {
   return (
     <article className="book">
-      <Image></Image>
-      <Title></Title>
-      <Author></Author>
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   );
 };
-
-const Image = () => {
-  return (
-    <img
-      src="https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg"
-      alt=""
-    />
-  );
-};
-
-const Title = () => <h1>I Love You to the Moon and Back</h1>;
-const Author = () => <h4>Amelia Hepworth</h4>;
 
 ReactDom.render(<BookList />, document.getElementById("root"));
